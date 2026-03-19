@@ -1,0 +1,761 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>innerluxes.dev | Premium Software Agency – SaaS, AI, Chromium & Web Development</title>
+<meta name="description" content="INNERLUXES is a premium software agency trusted by startups and enterprises across 25+ countries. Custom Chromium browsers, AI platforms, SaaS products, and more."/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',sans-serif;font-weight:400;color:#1a1a2e;background:#fff;line-height:1.7}
+h1,h2,h3,h4{font-weight:700;line-height:1.3}
+a{text-decoration:none;color:inherit}
+:root{
+  --primary:#0ea5e9;
+  --primary2:#38bdf8;
+  --accent:#6366f1;
+  --light:#f0f9ff;
+  --dark:#0f172a;
+  --gray:#f8fafc;
+  --text:#1e293b;
+  --muted:#64748b;
+}
+header{background:#fff;box-shadow:0 2px 16px rgba(14,165,233,.1);position:sticky;top:0;z-index:100;padding:0 24px}
+.header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:72px;gap:12px}
+.header-phone{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--primary);font-weight:700;white-space:nowrap}
+nav{display:flex;align-items:center;gap:4px}
+nav a{padding:8px 14px;border-radius:8px;font-size:15px;color:var(--dark);font-weight:600;transition:background .2s,color .2s}
+nav a:hover,nav a.active{background:var(--light);color:var(--primary)}
+.header-right{display:flex;align-items:center;gap:12px}
+.header-logo{display:flex;align-items:center;gap:8px}
+.header-logo img{height:44px;width:auto;object-fit:contain}
+.header-logo span{font-size:17px;font-weight:800;color:var(--dark);white-space:nowrap;letter-spacing:-0.5px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;border-radius:10px;font-weight:700;font-size:14px;cursor:pointer;border:none;transition:transform .15s,box-shadow .15s}
+.btn-grad{background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;box-shadow:0 4px 16px rgba(14,165,233,.3)}
+.btn-grad:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(14,165,233,.4)}
+.btn-outline{background:transparent;border:2px solid var(--primary);color:var(--primary)}
+.btn-outline:hover{background:var(--light)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--dark);border-radius:2px;transition:.3s}
+.mobile-nav{display:none;flex-direction:column;background:#fff;padding:16px;gap:4px;border-top:1px solid #eee}
+.mobile-nav a{padding:10px 14px;border-radius:8px;font-weight:600;color:var(--dark)}
+.mobile-nav a:hover{background:var(--light);color:var(--primary)}
+.mobile-nav .btn-grad{margin-top:8px;justify-content:center}
+.page{display:none}
+.page.active{display:block}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--dark) 0%,#1e3a5f 50%,#0f172a 100%);color:#fff;padding:100px 24px 90px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url('https://flm.by/sabXBPjNu4o') center/cover no-repeat;opacity:.15}
+.hero-inner{position:relative;max-width:860px;margin:0 auto}
+.hero-badge{display:inline-block;background:rgba(99,102,241,.25);border:1px solid rgba(99,102,241,.5);color:#a5b4fc;border-radius:50px;padding:6px 18px;font-size:13px;font-weight:700;margin-bottom:20px;letter-spacing:.5px}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);margin-bottom:20px;line-height:1.2}
+.hero h1 span{background:linear-gradient(90deg,#38bdf8,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:18px;color:rgba(255,255,255,.82);max-width:640px;margin:0 auto 36px}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero-stats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:60px;padding-top:40px;border-top:1px solid rgba(255,255,255,.15)}
+.stat{text-align:center}
+.stat-num{font-size:2.2rem;font-weight:700;background:linear-gradient(90deg,#38bdf8,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:14px;color:rgba(255,255,255,.7);margin-top:4px}
+section{padding:72px 24px}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-tag{display:inline-block;background:var(--light);color:var(--primary);border-radius:50px;padding:5px 16px;font-size:13px;font-weight:700;margin-bottom:12px}
+.section-title{font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--dark);margin-bottom:12px}
+.section-sub{color:var(--muted);font-size:17px;max-width:600px;margin-bottom:48px}
+.center{text-align:center}
+.center .section-sub{margin-left:auto;margin-right:auto}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:32px;align-items:center}
+.card{background:#fff;border-radius:18px;box-shadow:0 4px 24px rgba(14,165,233,.08);overflow:hidden;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 40px rgba(14,165,233,.15)}
+.card-img{width:100%;height:220px;object-fit:cover}
+.card-body{padding:24px}
+.card-icon{width:48px;height:48px;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.card h3{font-size:1.15rem;margin-bottom:8px;color:var(--dark)}
+.card p{font-size:15px;color:var(--muted);line-height:1.65}
+.card .btn{margin-top:16px;font-size:13px;padding:9px 18px}
+.why-bg{background:var(--gray)}
+.why-item{display:flex;gap:16px;align-items:flex-start;padding:20px;background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(14,165,233,.06)}
+.why-icon{width:48px;height:48px;flex-shrink:0;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:12px;display:flex;align-items:center;justify-content:center}
+.why-item h4{font-size:1rem;margin-bottom:4px;color:var(--dark)}
+.why-item p{font-size:14px;color:var(--muted)}
+.about-img{border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(14,165,233,.15)}
+.about-img img{width:100%;height:420px;object-fit:cover;display:block}
+.faq-item{border:1px solid #bae6fd;border-radius:12px;margin-bottom:12px;overflow:hidden}
+.faq-q{padding:18px 20px;cursor:pointer;font-weight:700;color:var(--dark);display:flex;justify-content:space-between;align-items:center;font-size:15px;background:#fff;transition:background .2s}
+.faq-q:hover{background:var(--light)}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s}
+.faq-a.open{max-height:400px;padding:0 20px 18px}
+.faq-a p{color:var(--muted);font-size:15px}
+.faq-arrow{transition:transform .3s;flex-shrink:0}
+.faq-arrow.open{transform:rotate(180deg)}
+.service-card{background:#fff;border-radius:18px;box-shadow:0 4px 24px rgba(14,165,233,.08);overflow:hidden;margin-bottom:40px}
+.service-card-inner{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+.service-card-inner.rev{direction:rtl}
+.service-card-inner.rev>*{direction:ltr}
+.service-img{width:100%;height:300px;object-fit:cover;display:block}
+.service-body{padding:36px}
+.service-body h3{font-size:1.4rem;color:var(--dark);margin-bottom:12px}
+.service-body p{color:var(--text);font-size:15px;margin-bottom:20px;line-height:1.7}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;padding:12px 16px;border:1.5px solid #bae6fd;border-radius:10px;font-family:inherit;font-size:15px;color:var(--dark);outline:none;transition:border .2s;margin-bottom:16px;background:#fafafa}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--primary);background:#fff}
+.contact-form textarea{height:130px;resize:vertical}
+.contact-form label{display:block;font-weight:700;font-size:14px;margin-bottom:6px;color:var(--dark)}
+.contact-info-card{background:linear-gradient(135deg,var(--dark),#1e3a5f);color:#fff;border-radius:18px;padding:32px;margin-bottom:24px}
+.contact-info-card h3{font-size:1.2rem;margin-bottom:20px}
+.contact-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:18px}
+.contact-row-icon{width:38px;height:38px;background:rgba(255,255,255,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-row-text strong{display:block;font-size:13px;opacity:.7;margin-bottom:2px;font-weight:400}
+.contact-row-text a{color:#38bdf8;font-weight:700}
+.map-wrap{border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.1)}
+.map-wrap iframe{width:100%;height:280px;border:0;display:block}
+.form-success{display:none;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:16px;color:#166534;font-weight:700;margin-top:12px}
+footer{background:#f0f9ff;border-top:1px solid #bae6fd;padding:60px 24px 30px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+.footer-brand img{height:50px;margin-bottom:14px;object-fit:contain}
+.footer-brand p{color:var(--muted);font-size:14px;line-height:1.7}
+.footer-col h4{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:14px}
+.footer-col a{display:block;color:var(--muted);font-size:14px;margin-bottom:8px;transition:color .2s}
+.footer-col a:hover{color:var(--primary)}
+.footer-contact-item{display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;font-size:14px;color:var(--muted)}
+.footer-contact-item svg{flex-shrink:0;margin-top:3px;color:var(--primary)}
+.footer-bottom{border-top:1px solid #bae6fd;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.float-call{position:fixed;bottom:28px;right:28px;z-index:200;width:58px;height:58px;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(14,165,233,.45);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 6px 24px rgba(14,165,233,.45)}50%{box-shadow:0 6px 40px rgba(99,102,241,.7)}}
+.social-links{display:flex;gap:10px;margin-top:16px}
+.social-links a{width:36px;height:36px;border-radius:8px;background:var(--light);display:flex;align-items:center;justify-content:center;transition:background .2s}
+.social-links a:hover{background:var(--primary)}
+.social-links a:hover svg{stroke:#fff}
+.tech-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tech-tag{background:var(--light);color:var(--primary);border-radius:50px;padding:4px 14px;font-size:13px;font-weight:600;border:1px solid #bae6fd}
+img.hero-img-fallback{background:linear-gradient(135deg,#1e3a5f,#0ea5e9);min-height:200px}
+@media(max-width:900px){
+  .service-card-inner{grid-template-columns:1fr}
+  .service-card-inner.rev{direction:ltr}
+  .service-img{height:220px}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .grid-2{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  nav,.header-phone,.btn-grad.desktop-book{display:none}
+  .hamburger{display:flex}
+  .hero{padding:60px 16px 50px}
+  .hero-stats{gap:24px}
+  section{padding:50px 16px}
+  .footer-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="tel:+923303795198" class="header-phone">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      +92-330-379-5198
+    </a>
+    <nav>
+      <a href="#home" class="nav-link active" onclick="showPage('home',this)">Home</a>
+      <a href="#about" class="nav-link" onclick="showPage('about',this)">About</a>
+      <a href="#services" class="nav-link" onclick="showPage('services',this)">Services</a>
+      <a href="#contact" class="nav-link" onclick="showPage('contact',this)">Contact</a>
+    </nav>
+    <div class="header-right">
+      <a href="#contact" onclick="showPage('contact')" class="btn btn-grad desktop-book">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Get a Quote
+      </a>
+      <div class="header-logo">
+        <img src="https://s.floomby.com/uploads/s/190326/KySq7R2l.jpg?download=1&name=Screenshot-19-03-2026%2010:25:47.jpg" alt="INNERLUXES Logo" onerror="this.style.display='none'"/>
+        <span>innerluxes.dev</span>
+      </div>
+      <div class="hamburger" onclick="toggleMobile()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#home" onclick="showPage('home');toggleMobile()">Home</a>
+    <a href="#about" onclick="showPage('about');toggleMobile()">About</a>
+    <a href="#services" onclick="showPage('services');toggleMobile()">Services</a>
+    <a href="#contact" onclick="showPage('contact');toggleMobile()">Contact</a>
+    <a href="#contact" onclick="showPage('contact');toggleMobile()" class="btn btn-grad">Get a Quote</a>
+  </div>
+</header>
+
+<!-- ===== HOME PAGE ===== -->
+<div id="page-home" class="page active">
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">Premium Software Agency · 25+ Countries</div>
+      <h1>We Build <span>Powerful Software</span> That Scales with Your Business</h1>
+      <p>Custom Chromium browsers, AI-powered platforms, and scalable SaaS products — built by senior talent with zero middlemen and total transparency.</p>
+      <div class="hero-btns">
+        <a href="#contact" onclick="showPage('contact')" class="btn btn-grad">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Get a Free Quote
+        </a>
+        <a href="#services" onclick="showPage('services')" class="btn" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3)">Explore Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">25+</div><div class="stat-label">Countries Served</div></div>
+        <div class="stat"><div class="stat-num">8+</div><div class="stat-label">Core Services</div></div>
+        <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Transparency</div></div>
+        <div class="stat"><div class="stat-num">0</div><div class="stat-label">Middlemen</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section>
+    <div class="section-inner grid-2">
+      <div>
+        <span class="section-tag">Who We Are</span>
+        <h2 class="section-title">A Premium Software Agency Based in Islamabad</h2>
+        <p style="margin-bottom:14px;color:var(--text)">INNERLUXES is a premium software agency trusted by startups and enterprises across 25+ countries. We build custom Chromium browsers, AI-powered platforms, and scalable SaaS products — with senior talent, zero middlemen, and total transparency.</p>
+        <p style="margin-bottom:14px;color:var(--text)">Based in Bahria Enclave, Islamabad, our team of seasoned developers and designers brings cutting-edge technology solutions to businesses of all sizes — from early-stage startups to large enterprises seeking reliable, scalable software.</p>
+        <p style="margin-bottom:20px;color:var(--text)">We don't just write code. We become your technology partner, understanding your business goals and crafting solutions that drive real, measurable results.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">SaaS</span><span class="tech-tag">AI / ML</span><span class="tech-tag">Chromium</span><span class="tech-tag">Web Apps</span><span class="tech-tag">Mobile</span><span class="tech-tag">Cloud & DevOps</span>
+        </div>
+        <a href="#about" onclick="showPage('about')" class="btn btn-grad" style="margin-top:24px">Learn More About Us</a>
+      </div>
+      <div style="border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(14,165,233,.15)">
+        <img src="https://s.floomby.com/uploads/s/190326/XBPjNu4o.jpg?download=1&name=Screenshot-19-03-2026%2010:26:56.jpg" alt="INNERLUXES Software Agency" loading="lazy" style="width:100%;height:420px;object-fit:cover;display:block" onerror="this.style.background='linear-gradient(135deg,#1e3a5f,#0ea5e9)';this.style.minHeight='420px'"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED SERVICES -->
+  <section style="background:var(--gray)">
+    <div class="section-inner">
+      <div class="center">
+        <span class="section-tag">What We Build</span>
+        <h2 class="section-title">Our Core Services</h2>
+        <p class="section-sub">From AI platforms to custom browser development, we deliver full-spectrum software solutions tailored to your unique needs.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <img src="https://s.floomby.com/uploads/s/190326/lfOC2Cxm.jpg?download=1&name=Screenshot-19-03-2026%2010:27:21.jpg" alt="SaaS Product Development" loading="lazy" class="card-img" onerror="this.style.background='linear-gradient(135deg,#0ea5e9,#6366f1)';this.style.display='block'"/>
+          <div class="card-body">
+            <h3>SaaS Product Development</h3>
+            <p>End-to-end SaaS platform development with scalable architecture, robust APIs, and seamless user experiences built for growth.</p>
+            <a href="#services" onclick="showPage('services')" class="btn btn-grad">Learn More</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://s.floomby.com/uploads/s/190326/ILlnjGLp.jpg?download=1&name=Screenshot-19-03-2026%2010:27:40.jpg" alt="AI-Powered Apps" loading="lazy" class="card-img" onerror="this.style.background='linear-gradient(135deg,#6366f1,#0ea5e9)';this.style.display='block'"/>
+          <div class="card-body">
+            <h3>AI-Powered Apps & Platforms</h3>
+            <p>We integrate cutting-edge AI and ML capabilities into your product — from intelligent automation to natural language processing.</p>
+            <a href="#services" onclick="showPage('services')" class="btn btn-grad">Learn More</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://s.floomby.com/uploads/s/190326/XBPjNu4o.jpg?download=1&name=Screenshot-19-03-2026%2010:26:56.jpg" alt="Chromium Browser Development" loading="lazy" class="card-img" onerror="this.style.background='linear-gradient(135deg,#0f172a,#0ea5e9)';this.style.display='block'"/>
+          <div class="card-body">
+            <h3>Chromium & Browser Development</h3>
+            <p>Custom Chromium-based browsers and browser extensions built for enterprises, with full control over features, UI, and branding.</p>
+            <a href="#services" onclick="showPage('services')" class="btn btn-grad">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="center" style="margin-top:36px">
+        <a href="#services" onclick="showPage('services')" class="btn btn-grad">View All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="why-bg">
+    <div class="section-inner">
+      <div class="center">
+        <span class="section-tag">Why INNERLUXES</span>
+        <h2 class="section-title">Senior Talent. Zero Middlemen. Total Transparency.</h2>
+        <p class="section-sub">We combine deep technical expertise with a client-first culture that keeps you informed, in control, and confident at every stage.</p>
+      </div>
+      <div class="grid-3">
+        <div class="why-item">
+          <div class="why-icon"><svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><h4>Senior-Only Talent</h4><p>Every project is handled by experienced senior engineers and designers — no juniors, no outsourcing your work further down the chain.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><h4>Zero Middlemen</h4><p>You work directly with the people building your product. No account managers, no translation layers — just direct, honest communication.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><h4>Total Transparency</h4><p>We share progress, challenges, and decisions openly. You always know exactly where your project stands and what's coming next.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+          <div><h4>Global Reach, Local Care</h4><p>Trusted by startups and enterprises across 25+ countries, yet we treat every client with the personal attention of a local partner.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+          <div><h4>Scalable Solutions</h4><p>We architect your software to grow with you — from MVP to enterprise scale, our solutions are built for the long term from day one.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div><h4>Long-Term Partnership</h4><p>We offer ongoing maintenance, support, and iteration — because great software is never just a one-time delivery.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section style="background:linear-gradient(135deg,var(--dark),#1e3a5f);color:#fff;padding:60px 24px;text-align:center">
+    <div class="section-inner">
+      <h2 style="font-size:clamp(1.6rem,3.5vw,2.4rem);margin-bottom:14px">Ready to Build Something Great?</h2>
+      <p style="color:rgba(255,255,255,.8);font-size:18px;max-width:560px;margin:0 auto 30px">Tell us your idea and we'll craft a custom solution. Free consultation — no commitments, no pressure.</p>
+      <a href="#contact" onclick="showPage('contact')" class="btn btn-grad" style="font-size:16px;padding:14px 32px">Start a Free Consultation</a>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== ABOUT PAGE ===== -->
+<div id="page-about" class="page">
+  <section style="background:linear-gradient(135deg,var(--dark),#1e3a5f);padding:60px 24px;color:#fff;text-align:center">
+    <div class="section-inner">
+      <span class="section-tag" style="background:rgba(99,102,241,.2);color:#a5b4fc;border:1px solid rgba(99,102,241,.3)">Our Story</span>
+      <h1 style="font-size:clamp(2rem,4vw,3rem);margin:12px 0 16px">About INNERLUXES</h1>
+      <p style="color:rgba(255,255,255,.8);font-size:18px;max-width:600px;margin:0 auto">A premium software agency built on expertise, transparency, and a relentless focus on results — trusted across 25+ countries.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner grid-2">
+      <div>
+        <span class="section-tag">Who We Are</span>
+        <h2 style="font-size:clamp(1.5rem,3vw,2.2rem);color:var(--dark);margin-bottom:16px">INNERLUXES — Built for the Future</h2>
+        <p style="margin-bottom:14px;color:var(--text)">INNERLUXES was founded with one clear mission: deliver premium software solutions with the transparency and directness that most agencies simply don't offer. Based in Bahria Enclave, Islamabad, we have grown into a trusted technology partner for startups and enterprises across 25+ countries.</p>
+        <p style="margin-bottom:14px;color:var(--text)">We specialize in custom Chromium browser development, AI-powered platforms, SaaS product engineering, web and mobile development, UI/UX design, and cloud & DevOps solutions. Every service is delivered by senior engineers who own the work from start to finish.</p>
+        <p style="margin-bottom:14px;color:var(--text)">Our team believes that great software comes from genuine collaboration. We integrate closely with your team, align with your goals, and build solutions that solve real problems — not just check boxes on a spec sheet.</p>
+        <p style="color:var(--text)">Whether you are an early-stage startup needing an MVP or an established enterprise seeking to modernize your tech stack, INNERLUXES has the talent and the process to deliver.</p>
+      </div>
+      <div class="about-img">
+        <img src="https://s.floomby.com/uploads/s/190326/ILlnjGLp.jpg?download=1&name=Screenshot-19-03-2026%2010:27:40.jpg" alt="INNERLUXES Team Islamabad" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#1e3a5f,#0ea5e9)';this.style.minHeight='420px'"/>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--gray)">
+    <div class="section-inner grid-2">
+      <div style="border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(14,165,233,.15)">
+        <img src="https://s.floomby.com/uploads/s/190326/XBPjNu4o.jpg?download=1&name=Screenshot-19-03-2026%2010:26:56.jpg" alt="INNERLUXES Approach" loading="lazy" style="width:100%;height:420px;object-fit:cover;display:block" onerror="this.style.background='linear-gradient(135deg,#0f172a,#0ea5e9)';this.style.minHeight='420px'"/>
+      </div>
+      <div>
+        <span class="section-tag">Our Approach</span>
+        <h2 style="font-size:clamp(1.5rem,3vw,2.2rem);color:var(--dark);margin-bottom:16px">Senior-Led. Transparent. Scalable.</h2>
+        <p style="margin-bottom:14px;color:var(--text)">We operate with a flat, senior-first model. No junior developers learning on your project. No account managers sitting between you and the engineers. When you hire INNERLUXES, you get direct access to the people actually building your product.</p>
+        <p style="margin-bottom:14px;color:var(--text)">Our process starts with deep discovery — understanding your business, your users, and your technical landscape. From there, we define clear milestones, maintain open communication throughout, and deliver work that is production-ready, well-documented, and built to scale.</p>
+        <p style="margin-bottom:20px;color:var(--text)">We also provide ongoing maintenance and support, because we believe a great software partnership doesn't end at launch. We grow with you.</p>
+        <a href="#contact" onclick="showPage('contact')" class="btn btn-grad">Start a Conversation</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="center">
+        <span class="section-tag">Our Values</span>
+        <h2 class="section-title">What Drives Everything We Do</h2>
+        <p class="section-sub">Our core values shape every line of code, every design decision, and every client interaction at INNERLUXES.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><div class="card-body">
+          <div class="card-icon"><svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Quality Without Compromise</h3><p>We hold ourselves to the highest engineering and design standards on every project, regardless of size or budget.</p>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <div class="card-icon"><svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div>
+          <h3>Global Mindset</h3><p>With clients across 25+ countries, we understand diverse markets and build solutions that work for a global audience.</p>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <div class="card-icon"><svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h3>Radical Transparency</h3><p>We share the good and the challenging. You'll always know where your project stands, what's next, and why decisions were made.</p>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section style="background:var(--gray)">
+    <div class="section-inner" style="max-width:800px">
+      <div class="center">
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-sub">Common questions about working with INNERLUXES and our software development process.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What types of businesses do you work with? <svg class="faq-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-a"><p>We work with startups, SMEs, and large enterprises across a wide range of industries including fintech, healthtech, edtech, e-commerce, and more. Our clients span 25+ countries, and we adapt our process to fit organizations of any size and stage.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How is INNERLUXES different from other agencies? <svg class="faq-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-a"><p>Three things set us apart: we use only senior talent, we eliminate all middlemen so you talk directly to your engineers, and we operate with total transparency — sharing progress, challenges, and decisions openly throughout your project.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do you offer ongoing maintenance and support? <svg class="faq-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-a"><p>Yes. We offer dedicated maintenance and support packages to ensure your software stays up-to-date, secure, and performant after launch. We see ourselves as a long-term partner, not a one-time vendor.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What is your typical project timeline? <svg class="faq-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-a"><p>Timelines vary based on project scope and complexity. A typical MVP can range from 6–12 weeks, while larger enterprise projects may span several months. During our free consultation, we'll provide a realistic timeline estimate tailored to your specific requirements.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can you work with our existing development team? <svg class="faq-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-a"><p>Absolutely. We are experienced in staff augmentation and collaborative development models. Our engineers can integrate seamlessly with your existing team, adopt your workflows, and contribute meaningfully from day one.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== SERVICES PAGE ===== -->
+<div id="page-services" class="page">
+  <section style="background:linear-gradient(135deg,var(--dark),#1e3a5f);padding:60px 24px;color:#fff;text-align:center">
+    <div class="section-inner">
+      <span class="section-tag" style="background:rgba(99,102,241,.2);color:#a5b4fc;border:1px solid rgba(99,102,241,.3)">What We Build</span>
+      <h1 style="font-size:clamp(2rem,4vw,3rem);margin:12px 0 16px">Our Services</h1>
+      <p style="color:rgba(255,255,255,.8);font-size:18px;max-width:620px;margin:0 auto">Full-spectrum software development services — from AI platforms to custom browsers, delivered by senior talent with total transparency.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+
+      <div class="service-card">
+        <div class="service-card-inner">
+          <img src="https://s.floomby.com/uploads/s/190326/lfOC2Cxm.jpg?download=1&name=Screenshot-19-03-2026%2010:27:21.jpg" alt="SaaS Product Development" loading="lazy" class="service-img" onerror="this.style.background='linear-gradient(135deg,#0ea5e9,#6366f1)'"/>
+          <div class="service-body">
+            <h3>SaaS Product Development</h3>
+            <p>We design and develop scalable SaaS platforms from the ground up — multi-tenant architectures, subscription billing, role-based access, and intuitive dashboards. Whether you need an MVP to validate your idea or a full-scale product ready for thousands of users, our senior engineers architect SaaS solutions built for performance, reliability, and growth. We handle the entire stack: backend APIs, frontend interfaces, database design, and deployment pipelines.</p>
+            <a href="#contact" onclick="showPage('contact')" class="btn btn-grad">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-inner rev">
+          <img src="https://s.floomby.com/uploads/s/190326/ILlnjGLp.jpg?download=1&name=Screenshot-19-03-2026%2010:27:40.jpg" alt="Web Development" loading="lazy" class="service-img" onerror="this.style.background='linear-gradient(135deg,#6366f1,#0ea5e9)'"/>
+          <div class="service-body">
+            <h3>Web Development</h3>
+            <p>From marketing websites to complex web applications, INNERLUXES delivers fast, responsive, and pixel-perfect web experiences. We work with modern frameworks including React, Next.js, Vue, and Node.js, ensuring your web product is performant, secure, and SEO-ready. Our design-to-development workflow ensures every interface looks great and functions flawlessly across all devices and browsers. We also handle integrations with third-party APIs, payment gateways, and enterprise systems.</p>
+            <a href="#contact" onclick="showPage('contact')" class="btn btn-grad">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-inner">
+          <img src="https://s.floomby.com/uploads/s/190326/lfOC2Cxm.jpg?download=1&name=Screenshot-19-03-2026%2010:27:21.jpg" alt="AI-Powered Apps" loading="lazy" class="service-img" onerror="this.style.background='linear-gradient(135deg,#0f172a,#6366f1)'"/>
+          <div class="service-body">
+            <h3>AI-Powered Apps & Platforms</h3>
+            <p>We build intelligent applications that leverage the latest in artificial intelligence and machine learning — from natural language processing and computer vision to recommendation engines and predictive analytics. Our AI engineers integrate cutting-edge models and frameworks into your product, creating experiences that are smarter, more automated, and more valuable to your users. Whether you need a custom AI assistant, document processing pipeline, or an intelligent analytics dashboard, we deliver it with production-grade reliability.</p>
+            <a href="#contact" onclick="showPage('contact')" class="btn btn-grad">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-inner rev">
+          <img src="https://s.floomby.com/uploads/s/190326/XBPjNu4o.jpg?download=1&name=Screenshot-19-03-2026%2010:26:56.jpg" alt="Desktop & Mobile App Development" loading="lazy" class="service-img" onerror="this.style.background='linear-gradient(135deg,#1e3a5f,#0ea5e9)'"/>
+          <div class="service-body">
+            <h3>Desktop & Mobile App Development</h3>
+            <p>We develop cross-platform desktop applications using Electron and Tauri, and native or cross-platform mobile apps with React Native and Flutter. Whether you need a consumer-facing mobile product or an enterprise desktop tool, our team delivers polished, performant applications that users love. We handle the entire process from UX design and prototyping through to deployment on App Store, Google Play, or enterprise distribution channels.</p>
+            <a href="#contact" onclick="showPage('contact')" class="btn btn-grad">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-inner">
+          <img src="https://s.floomby.com/uploads/s/190326/lfOC2Cxm.jpg?download=1&name=Screenshot-19-03-2026%2010:27:21.jpg" alt="Chromium Browser Development" loading="lazy" class="service-img" onerror="this.style.background='linear-gradient(135deg,#0ea5e9,#0f172a)'"/>
+          <div class="service-body">
+            <h3>Chromium & Browser Development</h3>
+            <p>INNERLUXES specializes in building custom Chromium-based browsers tailored for enterprise use cases. We develop white-label browsers with custom UI, built-in security policies, enterprise management features, and proprietary extensions. This is a niche, highly technical capability that very few agencies offer — and it is one of our flagship strengths. If your business needs a branded browser, a kiosk-mode application, or a deeply customized browsing environment, we are your team.</p>
+            <a href="#contact" onclick="showPage('contact')" class="btn btn-grad">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-inner rev">
+          <img src="https://s.floomby.com/uploads/s/190326/ILlnjGLp.jpg?download=1&name=Screenshot-19-03-2026%2010:27:40.jpg" alt="UI/UX Design" loading="lazy" class="service-img" onerror="this.style.background='linear-gradient(135deg,#6366f1,#1e3a5f)'"/>
+          <div class="service-body">
+            <h3>UI/UX Design</h3>
+            <p>Great software starts with great design. Our UI/UX team creates intuitive, beautiful, and accessible interfaces that users actually enjoy using. We conduct user research, build detailed wireframes and prototypes in Figma, and validate designs before a single line of code is written. Our design process is deeply integrated with development, ensuring pixel-perfect implementation and consistent design systems that scale as your product grows.</p>
+            <a href="#contact" onclick="showPage('contact')" class="btn btn-grad">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-inner">
+          <img src="https://s.floomby.com/uploads/s/190326/XBPjNu4o.jpg?download=1&name=Screenshot-19-03-2026%2010:26:56.jpg" alt="Cloud & DevOps Solutions" loading="lazy" class="service-img" onerror="this.style.background='linear-gradient(135deg,#0ea5e9,#6366f1)'"/>
+          <div class="service-body">
+            <h3>Cloud & DevOps Solutions</h3>
+            <p>We architect and manage cloud infrastructure on AWS, GCP, and Azure — from initial setup through to fully automated CI/CD pipelines, monitoring, and auto-scaling. Our DevOps engineers implement infrastructure-as-code, containerization with Docker and Kubernetes, and security best practices that keep your systems reliable and your deployments smooth. Whether you are migrating to the cloud or optimizing an existing setup, we bring the expertise to do it right.</p>
+            <a href="#contact" onclick="showPage('contact')" class="btn btn-grad">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-inner rev">
+          <img src="https://s.floomby.com/uploads/s/190326/lfOC2Cxm.jpg?download=1&name=Screenshot-19-03-2026%2010:27:21.jpg" alt="Maintenance & Support" loading="lazy" class="service-img" onerror="this.style.background='linear-gradient(135deg,#1e3a5f,#6366f1)'"/>
+          <div class="service-body">
+            <h3>Maintenance & Support</h3>
+            <p>Software is never truly finished. Our ongoing maintenance and support packages keep your product secure, performant, and up-to-date long after launch. We offer bug fixing, dependency updates, performance monitoring, feature iterations, and technical support with defined SLAs. With INNERLUXES, you gain a reliable long-term partner who stays invested in your product's success — not just a vendor who disappears after delivery.</p>
+            <a href="#contact" onclick="showPage('contact')" class="btn btn-grad">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="background:linear-gradient(135deg,var(--dark),#1e3a5f);color:#fff;padding:60px 24px;text-align:center">
+    <div class="section-inner">
+      <h2 style="font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:14px">Not Sure Where to Start?</h2>
+      <p style="color:rgba(255,255,255,.8);font-size:17px;max-width:520px;margin:0 auto 28px">Book a free consultation and our team will assess your needs, recommend the right approach, and outline a clear path forward — no pressure, no commitment.</p>
+      <a href="#contact" onclick="showPage('contact')" class="btn btn-grad" style="font-size:15px;padding:13px 30px">Request a Free Consultation</a>
+    </div>
+  </section>
+</div>
+
+<!-- ===== CONTACT PAGE ===== -->
+<div id="page-contact" class="page">
+  <section style="background:linear-gradient(135deg,var(--dark),#1e3a5f);padding:60px 24px;color:#fff;text-align:center">
+    <div class="section-inner">
+      <span class="section-tag" style="background:rgba(99,102,241,.2);color:#a5b4fc;border:1px solid rgba(99,102,241,.3)">Get in Touch</span>
+      <h1 style="font-size:clamp(2rem,4vw,3rem);margin:12px 0 16px">Contact INNERLUXES</h1>
+      <p style="color:rgba(255,255,255,.8);font-size:18px;max-width:580px;margin:0 auto">Have a project in mind? Let's talk. Reach out to schedule your free consultation or ask any questions about our services.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div style="max-width:960px;margin:0 auto">
+        <p style="font-size:16px;color:var(--text);margin-bottom:36px;text-align:center">Whether you are ready to start building or just exploring your options, our team is here to help. Fill out the form and we will get back to you promptly, or reach us directly by phone or email.</p>
+
+        <div class="contact-grid">
+          <div>
+            <h2 style="font-size:1.5rem;margin-bottom:20px;color:var(--dark)">Send Us a Message</h2>
+            <div class="contact-form">
+              <div>
+                <label for="cf-name">Full Name</label>
+                <input id="cf-name" type="text" placeholder="Your full name"/>
+              </div>
+              <div>
+                <label for="cf-email">Email Address</label>
+                <input id="cf-email" type="email" placeholder="your@email.com"/>
+              </div>
+              <div>
+                <label for="cf-phone">Phone Number</label>
+                <input id="cf-phone" type="tel" placeholder="Your phone number"/>
+              </div>
+              <div>
+                <label for="cf-service">Service of Interest</label>
+                <select id="cf-service">
+                  <option value="">Select a service...</option>
+                  <option>SaaS Product Development</option>
+                  <option>Web Development</option>
+                  <option>AI-Powered Apps & Platforms</option>
+                  <option>Desktop & Mobile App Development</option>
+                  <option>Chromium & Browser Development</option>
+                  <option>UI/UX Design</option>
+                  <option>Cloud & DevOps Solutions</option>
+                  <option>Maintenance & Support</option>
+                  <option>Other / Not Sure Yet</option>
+                </select>
+              </div>
+              <div>
+                <label for="cf-msg">Your Message</label>
+                <textarea id="cf-msg" placeholder="Tell us about your project or idea..."></textarea>
+              </div>
+              <button class="btn btn-grad" onclick="submitForm()" style="width:100%;justify-content:center;font-size:15px;padding:13px">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Send Message
+              </button>
+              <div class="form-success" id="formSuccess">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:8px"><polyline points="20 6 9 17 4 12"/></svg>
+                Thank you! We will be in touch with you shortly.
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="contact-info-card">
+              <h3>Contact Information</h3>
+              <div class="contact-row">
+                <div class="contact-row-icon"><svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                <div class="contact-row-text">
+                  <strong>Address</strong>
+                  Office No. 202, 3rd Floor, Plaza No. 31, Sector C Commercial, Bahria Enclave, Islamabad
+                </div>
+              </div>
+              <div class="contact-row">
+                <div class="contact-row-icon"><svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+                <div class="contact-row-text">
+                  <strong>Phone</strong>
+                  <a href="tel:+923303795198">+92-330-379-5198</a><br>
+                  <a href="tel:+923326833870">+92-332-683-3870</a>
+                </div>
+              </div>
+              <div class="contact-row">
+                <div class="contact-row-icon"><svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                <div class="contact-row-text">
+                  <strong>Email</strong>
+                  <a href="mailto:innerluxes@gmail.com">innerluxes@gmail.com</a>
+                </div>
+              </div>
+              <div class="contact-row">
+                <div class="contact-row-icon"><svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                <div class="contact-row-text">
+                  <strong>Business Hours</strong>
+                  Monday – Friday: 9:00 AM – 6:00 PM
+                </div>
+              </div>
+              <div class="contact-row">
+                <div class="contact-row-icon"><svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20"/></svg></div>
+                <div class="contact-row-text">
+                  <strong>Website</strong>
+                  <a href="https://innerluxes.dev" target="_blank">innerluxes.dev</a>
+                </div>
+              </div>
+              <div style="margin-top:8px">
+                <strong style="font-size:13px;opacity:.7;display:block;margin-bottom:10px">Follow Us</strong>
+                <div class="social-links">
+                  <a href="https://www.facebook.com/profile.php?id=61578995344592" target="_blank" title="Facebook">
+                    <svg width="18" height="18" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                  </a>
+                  <a href="https://www.linkedin.com/company/innerluxes-dev" target="_blank" title="LinkedIn">
+                    <svg width="18" height="18" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+           
+
+        <div style="background:var(--light);border-radius:16px;padding:32px;margin-top:48px;text-align:center">
+          <h3 style="font-size:1.3rem;color:var(--dark);margin-bottom:10px">Visit Our Office in Islamabad</h3>
+          <p style="color:var(--muted);font-size:15px;max-width:640px;margin:0 auto">We are located in Bahria Enclave, Islamabad — one of the city's most accessible commercial districts. Whether you want to schedule an in-person meeting or simply have a call, our team is always happy to connect. We work with clients globally and are comfortable with any timezone or communication format.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="https://s.floomby.com/uploads/s/190326/ILlnjGLp.jpg?download=1&name=Screenshot-19-03-2026%2010:27:40.jpg" alt="INNERLUXES Logo" onerror="this.style.display='none'"/>
+        <p style="font-size:16px;font-weight:800;color:var(--dark);margin-bottom:10px">INNERLUXES</p>
+        <p>A premium software agency trusted by startups and enterprises across 25+ countries. We build custom Chromium browsers, AI-powered platforms, and scalable SaaS products — with senior talent, zero middlemen, and total transparency.</p>
+        <div class="social-links" style="margin-top:14px">
+          <a href="https://www.facebook.com/profile.php?id=61578995344592" target="_blank" title="Facebook">
+            <svg width="18" height="18" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/innerluxes-dev" target="_blank" title="LinkedIn">
+            <svg width="18" height="18" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#home" onclick="showPage('home')">Home</a>
+        <a href="#about" onclick="showPage('about')">About Us</a>
+        <a href="#services" onclick="showPage('services')">Services</a>
+        <a href="#contact" onclick="showPage('contact')">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <a href="#services" onclick="showPage('services')">SaaS Development</a>
+        <a href="#services" onclick="showPage('services')">AI-Powered Apps</a>
+        <a href="#services" onclick="showPage('services')">Chromium / Browser Dev</a>
+        <a href="#services" onclick="showPage('services')">Web Development</a>
+        <a href="#services" onclick="showPage('services')">UI/UX Design</a>
+        <a href="#services" onclick="showPage('services')">Cloud & DevOps</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Office No. 202, 3rd Floor, Plaza No. 31, Bahria Enclave, Islamabad
+        </div>
+        <div class="footer-contact-item">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:+923303795198" style="color:var(--primary)">+92-330-379-5198</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:innerluxes@gmail.com" style="color:var(--primary)">innerluxes@gmail.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20"/></svg>
+          <a href="https://innerluxes.dev" target="_blank" style="color:var(--primary)">innerluxes.dev</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 INNERLUXES. All rights reserved.</span>
+      <span>Bahria Enclave, Islamabad, Pakistan</span>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:+923303795198" class="float-call" aria-label="Call INNERLUXES">
+  <svg width="24" height="24" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+</a>
+
+<script>
+function showPage(id, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
+  if (el) el.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function toggleMobile() {
+  var n = document.getElementById('mobileNav');
+  n.style.display = n.style.display === 'flex' ? 'none' : 'flex';
+}
+function toggleFaq(el) {
+  var ans = el.nextElementSibling;
+  var arrow = el.querySelector('.faq-arrow');
+  var isOpen = ans.classList.contains('open');
+  document.querySelectorAll('.faq-a.open').forEach(a => {
+    a.classList.remove('open');
+    a.previousElementSibling.querySelector('.faq-arrow').classList.remove('open');
+  });
+  if (!isOpen) { ans.classList.add('open'); arrow.classList.add('open'); }
+}
+function submitForm() {
+  var name = document.getElementById('cf-name').value.trim();
+  var email = document.getElementById('cf-email').value.trim();
+  if (!name || !email) { alert('Please enter your name and email.'); return; }
+  ['cf-name','cf-email','cf-phone','cf-service','cf-msg'].forEach(id => {
+    var el = document.getElementById(id);
+    el.value = '';
+  });
+  var s = document.getElementById('formSuccess');
+  s.style.display = 'block';
+  setTimeout(function(){ s.style.display='none'; }, 5000);
+}
+</script>
+</body>
+</html>
